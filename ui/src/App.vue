@@ -37,11 +37,12 @@
         <resource-detail :resourceID="resourceID" />
       </div>
       <div class="col col-8-lg">
-        <graph
+        <graph2 ref="filegraph" />
+        <!-- <graph
           ref="filegraph"
           :displayGraph="displayGraph"
           v-on:getNode="selectResource"
-        />
+        /> -->
         <explorer @selectResource="selectResource" />
       </div>
     </div>
@@ -51,7 +52,8 @@
 <script>
 import MainNav from "@/components/MainNav.vue";
 import ResourceDetail from "@/components/ResourceDetail.vue";
-import Graph from "@/components/Graph/Graph.vue";
+// import Graph from "@/components/Graph/Graph.vue";
+import Graph2 from "@/components/Graph/Graph2.vue";
 // import SampleGraph from "@/assets/eks-graph.json";
 import Explorer from "@/components/Explorer.vue";
 
@@ -62,13 +64,14 @@ export default {
   },
   components: {
     MainNav,
-    Graph,
+    // Graph,
+    Graph2,
     Explorer,
     ResourceDetail,
   },
   data() {
     return {
-      displayGraph: true,
+      // displayGraph: true,
       resourceID: "",
     };
   },
